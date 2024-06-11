@@ -1,0 +1,12 @@
+server:
+  port: 8000
+
+sql:
+  base-package: com.mall.entity.*
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.222.165.148:3306/mall
+    username: root
+    password: abc@1234

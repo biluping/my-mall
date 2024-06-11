@@ -11,6 +11,7 @@
     <description>my-mall</description>
     <modules>
         <module>mall-product</module>
+        <module>mall-common</module>
     </modules>
 
     <properties>
@@ -51,10 +52,19 @@
         <okhttp3.version>4.9.3</okhttp3.version>
         <javafaker.version>1.0.2</javafaker.version>
         <jetcache.version>2.7.3</jetcache.version>
+        <mybatis-plus-boot-starter.version>3.5.1</mybatis-plus-boot-starter.version>
+        <mysql.version>8.3.0</mysql.version>
         <!-- tool end -->
     </properties>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -201,6 +211,18 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${netty-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

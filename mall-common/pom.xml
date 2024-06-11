@@ -9,7 +9,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>mall-product</artifactId>
+    <artifactId>mall-common</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,22 +18,17 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.myboy</groupId>
-            <artifactId>mall-common</artifactId>
-            <version>1.0</version>
-        </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.myboy</groupId>
+            <artifactId>sql-engine-boot-starter</artifactId>
+            <version>2.3.12.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
