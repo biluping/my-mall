@@ -1,7 +1,9 @@
-package com.mall.entity;
+package com.mall.domain.entity;
 
+import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.mall.db.BaseDO;
+import com.mall.domain.vo.CategoryVO;
 import com.myboy.sql.annotation.Column;
 import com.myboy.sql.annotation.Table;
 import lombok.Data;
@@ -27,6 +29,10 @@ public class CategoryDO extends BaseDO {
     private Boolean isShow;
 
     @Column(comment = "排序")
-    private Integer orderNo;
+    private Integer sort;
+
+    public CategoryVO toVO() {
+        return Convert.convert(CategoryVO.class, this);
+    }
 
 }

@@ -25,7 +25,6 @@
         <spring-cloud-dependencies.version>Hoxton.SR12</spring-cloud-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2.2.9.RELEASE</spring-cloud-alibaba-dependencies.version>
         <spring-cloud-starter-openfeign.version>2.2.5.RELEASE</spring-cloud-starter-openfeign.version>
-        <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
         <redisson-spring-boot-starter.version>3.17.3</redisson-spring-boot-starter.version>
         <shardingsphere-jdbc-core-spring-boot-starter.version>5.2.0
         </shardingsphere-jdbc-core-spring-boot-starter.version>
@@ -44,7 +43,6 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <dozer.version>6.5.2</dozer.version>
         <fastjson2.version>2.0.7</fastjson2.version>
-        <hutool-all.version>5.8.2</hutool-all.version>
         <guava.version>31.1-jre</guava.version>
         <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
@@ -52,18 +50,13 @@
         <okhttp3.version>4.9.3</okhttp3.version>
         <javafaker.version>1.0.2</javafaker.version>
         <jetcache.version>2.7.3</jetcache.version>
-        <mybatis-plus-boot-starter.version>3.5.1</mybatis-plus-boot-starter.version>
         <mysql.version>8.3.0</mysql.version>
         <!-- tool end -->
     </properties>
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -153,12 +146,6 @@
             </dependency>
 
             <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool-all.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
@@ -211,12 +198,6 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${netty-all.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus-boot-starter.version}</version>
             </dependency>
 
             <dependency>

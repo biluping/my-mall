@@ -1,8 +1,15 @@
 package com.mall.service;
 
-import com.mall.entity.CategoryDO;
+import com.mall.domain.ao.CategoryAddAO;
+import com.mall.domain.vo.CategoryVO;
+
+import java.util.List;
 
 public interface CategoryService {
 
-    CategoryDO getById(Long id);
+    CategoryVO getById(Long id);
+
+    void add(CategoryAddAO ao);
+
+    List<CategoryVO> getCategoryTree();
 }
