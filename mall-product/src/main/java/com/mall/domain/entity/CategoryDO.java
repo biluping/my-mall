@@ -2,7 +2,7 @@ package com.mall.domain.entity;
 
 import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.mall.db.BaseDO;
+import com.mall.domain.BaseDO;
 import com.mall.domain.vo.CategoryVO;
 import com.myboy.sql.annotation.Column;
 import com.myboy.sql.annotation.Table;

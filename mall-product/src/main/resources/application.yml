@@ -10,3 +10,6 @@ spring:
     url: jdbc:mysql://124.222.165.148:3306/mall?characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
     password: abc@1234
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

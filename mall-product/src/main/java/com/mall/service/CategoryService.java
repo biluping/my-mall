@@ -12,4 +12,6 @@ public interface CategoryService {
     void add(CategoryAddAO ao);
 
     List<CategoryVO> getCategoryTree();
+
+    void deleteCategory(Long id);
 }

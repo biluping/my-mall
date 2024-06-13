@@ -27,4 +27,10 @@ public interface CategoryMapper extends BaseMapper<CategoryDO> {
                 Wrappers.lambdaQuery(CategoryDO.class).eq(CategoryDO::getId, id)
         ) > 0;
     }
+
+    default Boolean childrenExists(Long pid) {
+        return selectCount(
+                Wrappers.lambdaQuery(CategoryDO.class).eq(CategoryDO::getPid, pid)
+        ) > 0;
+    }
 }

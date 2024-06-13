@@ -1,7 +1,8 @@
-package com.mall.db;
+package com.mall.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.myboy.sql.annotation.Column;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class BaseDO extends Model<BaseDO> {
     @Column(defaultVal = "CURRENT_TIMESTAMP", onUpdate = "CURRENT_TIMESTAMP", comment = "修改时间")
     private LocalDateTime updateTime;
 
+    @TableLogic
     @Column(defaultVal = "0", comment = "删除标志")
     private Long delFlag;
 }

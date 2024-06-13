@@ -45,4 +45,12 @@ public class CategoryController {
         return categoryService.getCategoryTree();
     }
 
+    /**
+     * 删除分类
+     */
+    @DeleteMapping("/delete/{id}")
+    public void deleteCategory(@PathVariable("id") Long id) {
+        categoryService.deleteCategory(id);
+    }
+
 }
