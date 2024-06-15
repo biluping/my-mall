@@ -9,7 +9,7 @@ public interface CategoryService {
 
     CategoryVO getById(Long id);
 
-    void add(CategoryAddAO ao);
+    Long add(CategoryAddAO ao);
 
     List<CategoryVO> getCategoryTree();
 

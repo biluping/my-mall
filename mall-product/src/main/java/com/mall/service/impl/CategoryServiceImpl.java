@@ -33,7 +33,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void add(CategoryAddAO ao) {
+    public Long add(CategoryAddAO ao) {
         Assert.isFalse(categoryMapper.nameExists(ao.getId(), ao.getName()), () -> new BizException("分类名已存在"));
         Assert.isTrue(ao.getPid() == 0 || categoryMapper.idExists(ao.getPid()), () -> new BizException("父分类不存在"));
 
@@ -43,6 +43,7 @@ public class CategoryServiceImpl implements CategoryService {
         } else {
             categoryDO.updateById();
         }
+        return categoryDO.getId();
     }
 
     @Override

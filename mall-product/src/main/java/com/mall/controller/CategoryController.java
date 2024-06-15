@@ -25,8 +25,8 @@ public class CategoryController {
      * 添加修改分类
      */
     @PostMapping("/add")
-    public void addCategory(@Valid @RequestBody CategoryAddAO ao) {
-        categoryService.add(ao);
+    public Long addCategory(@Valid @RequestBody CategoryAddAO ao) {
+        return categoryService.add(ao);
     }
 
     /**
