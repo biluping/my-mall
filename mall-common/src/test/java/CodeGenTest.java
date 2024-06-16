@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class CodeGenTest {
 
-    private static final String entity = "Brand";
+    private static final String entity = "Supplier";
     private static final String moduleName = "mall-product";
 
     @SneakyThrows
