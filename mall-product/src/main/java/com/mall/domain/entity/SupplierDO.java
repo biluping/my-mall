@@ -14,7 +14,7 @@ import lombok.Data;
 @TableName("mall_supplier")
 public class SupplierDO extends BaseDO {
 
-    @Column(len = 40, name = "供货商名称")
+    @Column(len = 40, comment = "供货商名称")
     private String name;
 
     @Column(comment = "联系人姓名", len = 20)

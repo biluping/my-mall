@@ -7,9 +7,10 @@ sql:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://124.222.165.148:3306/mall?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://124.222.165.148:3306/mall_product?characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
-    password: ${dbpassword}
+    password: ${password}
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

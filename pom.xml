@@ -12,6 +12,7 @@
     <modules>
         <module>mall-product</module>
         <module>mall-common</module>
+        <module>mall-infrastructure</module>
     </modules>
 
     <properties>

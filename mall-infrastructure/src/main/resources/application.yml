@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.222.165.148:3306/mall_infrastructure?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: ${password}
+
+dromara:
+  x-file-storage:
+    default-platform: minio-1
+    thumbnail-suffix: ".min.jpg"
+    minio:
+      - platform: minio-1 # 存储平台标识
+        enable-storage: true  # 启用存储
+        access-key: ${minio_ak}
+        secret-key: ${minio_sk}
+        end-point: http://124.222.165.148:9000
+        bucket-name: my-mall
+        domain: http://124.222.165.148:9000/my-mall
+        base-path: /
