@@ -12,8 +12,9 @@ import java.util.Map;
 
 public class CodeGenTest {
 
-    private static final String entity = "Supplier";
-    private static final String moduleName = "mall-product";
+    private static final String entitys = "FileDetail,FilePartDetail";
+    private static final String moduleName = "mall-infrastructure";
+    private static String entity = null;
 
     @SneakyThrows
     public static void main(String[] args) {
@@ -23,15 +24,17 @@ public class CodeGenTest {
         cfg.setDefaultEncoding("UTF-8");
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
 
-        Map<String, Object> data = new HashMap<>();
-        data.put("entity", entity);
-        data.put("entitySmall", entity.toLowerCase());
+        for (String entity : entitys.split(",")) {
+            Map<String, Object> data = new HashMap<>();
+            data.put("entity", entity);
+            data.put("entitySmall", entity.toLowerCase());
 
-        renderMapperJava(cfg, data);
-        renderMapperXml(cfg, data);
-        renderService(cfg, data);
-        renderServiceImpl(cfg, data);
-
+            CodeGenTest.entity = entity;
+            renderMapperJava(cfg, data);
+            renderMapperXml(cfg, data);
+            renderService(cfg, data);
+            renderServiceImpl(cfg, data);
+        }
     }
 
     private static void renderMapperJava(Configuration cfg, Map<String, Object> data) throws IOException, TemplateException {

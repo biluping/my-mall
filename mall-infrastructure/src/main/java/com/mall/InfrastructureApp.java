@@ -1,4 +1,4 @@
-package com.myboy;
+package com.mall;
 
 import org.dromara.x.file.storage.spring.EnableFileStorage;
 import org.springframework.boot.SpringApplication;
