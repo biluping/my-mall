@@ -37,8 +37,9 @@ public class FileDetailServiceImpl implements FileDetailService {
 
         if (fileDetailDO == null) {
             // 第一次上传，保持数据，初始化 uploadId
-            String uploadId = minioClient.getUploadId(ao.getFileName());
-            fileDetailDO = ao.toDO(uploadId);
+            fileDetailDO = ao.toDO();
+            String uploadId = minioClient.getUploadId(fileDetailDO.minioFileName());
+            fileDetailDO.setUploadId(uploadId);
             fileDetailDO.insert();
             paramsMap.put("uploadId", uploadId);
         } else {
@@ -62,7 +63,7 @@ public class FileDetailServiceImpl implements FileDetailService {
     @Override
     public String mergePart(Long fileDetailId) {
         FileDetailDO fileDetailDO = fileDetailMapper.selectById(fileDetailId);
-        minioClient.completeMultipartUpload(fileDetailDO.getFileName(), fileDetailDO.getUploadId());
+        minioClient.completeMultipartUpload(fileDetailDO.minioFileName(), fileDetailDO.getUploadId());
 
         // 更新状态
         fileDetailDO.setIsFinishUpload(true);

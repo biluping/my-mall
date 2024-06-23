@@ -10,12 +10,11 @@ public class StartPartUploadAO {
     private String md5;
     private Integer partNum;
 
-    public FileDetailDO toDO(String uploadId) {
+    public FileDetailDO toDO() {
         FileDetailDO fileDetailDO = new FileDetailDO();
         fileDetailDO.setFileName(fileName);
         fileDetailDO.setFileMd5(md5);
         fileDetailDO.setPartNum(partNum);
-        fileDetailDO.setUploadId(uploadId);
         return fileDetailDO;
     }
 }

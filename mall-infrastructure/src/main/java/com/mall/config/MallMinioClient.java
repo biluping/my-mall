@@ -40,6 +40,10 @@ public class MallMinioClient extends MinioAsyncClient {
      */
     @SneakyThrows
     public String getPartPreSignUploadUrl(FileDetailDO fileDetailDO, Map<String, String> map) {
+//        Map<String, String> headers = Maps.newHashMap();
+//        Optional<MediaType> mediaType = MediaTypeFactory.getMediaType(fileDetailDO.getFileName());
+//        mediaType.ifPresent(type -> headers.put("Content-Type", type.toString()));
+
         GetPresignedObjectUrlArgs args = GetPresignedObjectUrlArgs.builder()
                 .bucket(minioProperties.getBucket())
                 .method(Method.PUT)
