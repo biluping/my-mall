@@ -12,8 +12,8 @@ import java.util.Map;
 
 public class CodeGenTest {
 
-    private static final String entitys = "FileDetail,FilePartDetail";
-    private static final String moduleName = "mall-infrastructure";
+    private static final String entitys = "Sku,Spu";
+    private static final String moduleName = "mall-product";
     private static String entity = null;
 
     @SneakyThrows
@@ -27,7 +27,7 @@ public class CodeGenTest {
         for (String entity : entitys.split(",")) {
             Map<String, Object> data = new HashMap<>();
             data.put("entity", entity);
-            data.put("entitySmall", entity.toLowerCase());
+            data.put("entitySmall", entity.substring(0, 1).toLowerCase() + entity.substring(1));
 
             CodeGenTest.entity = entity;
             renderMapperJava(cfg, data);
