@@ -20,32 +20,32 @@ public class SkuDO extends BaseDO {
     @Column(comment = "skuId")
     private Long spuId;
 
-    @Column(comment = "市场价")
+    @Column(comment = "市场价", notNull = false)
     private BigDecimal marketPrice;
 
-    @Column(comment = "价格")
+    @Column(comment = "价格", notNull = false)
     private BigDecimal price;
 
-    @Column(comment = "成本价")
+    @Column(comment = "成本价", notNull = false)
     private BigDecimal costPrice;
 
-    @Column(comment = "库存")
+    @Column(comment = "库存", notNull = false)
     private Integer inventory;
 
-    @Column(comment = "体积")
+    @Column(comment = "体积", notNull = false)
     private Integer volume;
 
-    @Column(comment = "重量")
+    @Column(comment = "重量", notNull = false)
     private Integer weight;
 
-    @Column(comment = "条码")
+    @Column(comment = "条码", notNull = false)
     private Integer barcodes;
 
-    @Column(comment = "规格图片", len = 200)
+    @Column(comment = "规格图片", len = 200, notNull = false)
     private String picUrl;
 
     @TableField(typeHandler = JacksonTypeHandler.class)
-    @Column(comment = "其他规格", jdbcType = MySqlTypeEnum.TEXT)
+    @Column(comment = "其他规格", jdbcType = MySqlTypeEnum.TEXT, notNull = false)
     private Map<String, String> otherSpec;
 
 }

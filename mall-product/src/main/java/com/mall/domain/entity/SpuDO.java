@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.mall.domain.BaseDO;
+import com.mall.domain.enums.ShippingMethod;
 import com.myboy.sql.annotation.Column;
 import com.myboy.sql.annotation.Table;
 import com.myboy.sql.constant.MySqlTypeEnum;
@@ -57,7 +58,7 @@ public class SpuDO extends BaseDO {
     private Boolean isMultiSpec;
 
     @TableField(typeHandler = JacksonTypeHandler.class)
-    @Column(comment = "多规格配置", jdbcType = MySqlTypeEnum.TEXT)
+    @Column(comment = "多规格配置", jdbcType = MySqlTypeEnum.TEXT, notNull = false)
     private List<SpecParam> specParamList;
 
     @Column(comment = "商品详情", jdbcType = MySqlTypeEnum.TEXT)
@@ -78,27 +79,16 @@ public class SpuDO extends BaseDO {
     @Column(comment = "配送方式")
     private ShippingMethod shippingMethod;
 
-    // 暂时快递运费包邮吧
-
-    public enum ShippingMethod {
-        EXPRESS_DELIVERY, IN_STORE_PICKUP
-    }
-
     @Data
     public static class SpecParam {
-
+        /**
+         * 规格名称
+         */
         private String name;
-
-        private Boolean hasImg;
-
-        private List<SpecItem> itemList;
-
-        @Data
-        public static class SpecItem {
-            private String imgUrl;
-            private String itemName;
-        }
-
+        /**
+         * 规格选项名称
+         */
+        private List<String> itemList;
     }
 
 }
