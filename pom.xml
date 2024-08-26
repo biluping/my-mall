@@ -3,6 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.12.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>org.myboy</groupId>
     <artifactId>my-mall</artifactId>
     <version>1.0</version>
@@ -45,7 +52,7 @@
         <dozer.version>6.5.2</dozer.version>
         <fastjson2.version>2.0.7</fastjson2.version>
         <guava.version>31.1-jre</guava.version>
-        <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
+<!--        <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>-->
         <validation-api.version>2.0.1.Final</validation-api.version>
         <jjwt.version>0.9.1</jjwt.version>
         <okhttp3.version>4.9.3</okhttp3.version>
@@ -62,14 +69,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -128,11 +127,11 @@
                 <version>${mapstruct.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate-validator.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.hibernate</groupId>-->
+<!--                <artifactId>hibernate-validator</artifactId>-->
+<!--                <version>${hibernate-validator.version}</version>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>javax.validation</groupId>
@@ -208,14 +207,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
